@@ -19,17 +19,10 @@ function bac(discipline){
         var pie = new d3pie("bac", {
             "header": {
                 "title": {
-                    "text": "Lots of Programming Languages",
+                    "text": "Bac d'origine",
                     "fontSize": 24,
                     "font": "open sans"
                 },
-                "subtitle": {
-                    "text": "A full pie chart to show off label collision detection and resolution.",
-                    "color": "#999999",
-                    "fontSize": 12,
-                    "font": "open sans"
-                },
-                "titleSubtitlePadding": 9
             },
             "footer": {
                 "color": "#999999",

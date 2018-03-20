@@ -1,3 +1,5 @@
+function gauge(){
+  
 var needle;
 
 (function(){
@@ -47,6 +49,8 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
 
   // Create SVG element
   svg = el.append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom);
+  start = svg.append("text").text("Stabilité").attr("x",margin.left).attr("y",height-100).style({'font-size': '30px'});
+  start = svg.append("text").text("Précarité").attr("x",margin.left*13).attr("y",height-100).style({'font-size': '30px'});
 
   // Add layer for the panel
   chart = svg.append('g').attr('transform', "translate(" + ((width + margin.left) / 2) + ", " + ((height + margin.top) / 2) + ")");
@@ -146,4 +150,4 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
 
   needle.moveTo(percent);
 
-})();
+})(); }

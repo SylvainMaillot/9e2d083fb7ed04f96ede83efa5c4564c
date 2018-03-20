@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" /> 
+        <script src="script/d3.v3.js" charset="utf-8"></script>
+		<script src="script/situationEmploi.js" charset="utf-8"></script>
+		<script type="text/javascript" src="script/d3_gauge.js"></script>
+		<style type="text/css">
+  			.chart-gauge
+			{
+			  width: 400px;
+			  margin: 100px auto  
+			 } 
+			.chart-filled
+			{
+				fill: steelblue;
+			}
+			.chart-empty
+			{
+				fill: #dedede;
+			}
+		
+			.needle, .needle-center
+			{
+				fill: #464A4F;
+			}
+
+			svg {
+			  font: 10px sans-serif;
+			}
+
+		</style>
+
+	</head>
+	<body onload="gauge(), situationEmploi('Activités culturelles et artistiques')">
+        <div class="chart-gauge"></div>
+	</body>
+
+</html>
