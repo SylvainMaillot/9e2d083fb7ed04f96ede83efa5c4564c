@@ -287,7 +287,7 @@ function radarChart(discipline,id_div){
     }
   };
 
-  d3.csv("data/insertion_lp.csv", function(error,data){
+  d3.csv("visu/data/insertion_lp.csv", function(error,data){
     var age;
     var revenu;
     var note;

@@ -34,7 +34,7 @@ function bars2(discipline){
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    d3.csv("data/insertion_lp.csv", function(error,data){
+    d3.csv("../data/insertion_lp.csv", function(error,data){
         data.forEach(function (d){
             if(d.discipline == discipline){
                 dataset = [{label : "Type d'emploi", "Cadre" : d.cadre, "Niveau Intermédiaire" : d.inter, "Employé, ouvrier" : d.employe}]

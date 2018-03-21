@@ -148,7 +148,7 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
   needle = new Needle(chart);
   needle.render();
 
-  d3.csv("data/insertion_lp.csv", function(error,data){
+  d3.csv("visu/data/insertion_lp.csv", function(error,data){
     var precaire;
     var stable;
 

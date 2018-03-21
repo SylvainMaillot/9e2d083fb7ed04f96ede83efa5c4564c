@@ -1,5 +1,5 @@
 function bac(discipline,id_div){
-    d4.csv("data/insertion_lp.csv", function(error,data){
+    d4.csv("visu/data/insertion_lp.csv", function(error,data){
         var bacS;
         var bacL;
         var bacES;

@@ -1,22 +1,22 @@
-var svg = d3.select("svg"),
+var svg = d4.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var format = d3.format(",d");
+var format = d4.format(",d");
 
-var color = d3.scaleOrdinal(d3.schemeCategory20c);
+var color = d4.scaleOrdinal(d4.schemeCategory20c);
 
-var pack = d3.pack()
+var pack = d4.pack()
     .size([width, height])
     .padding(1.5);
 
-d3.csv("./js/flare.csv", function(d) {
+d4.csv("./js/flare.csv", function(d) {
   d.value = +d.value;
   if (d.value) return d;
 }, function(error, classes) {
   if (error) throw error;
 
-  var root = d3.hierarchy({children: classes})
+  var root = d4.hierarchy({children: classes})
       .sum(function(d) { return d.value; })
       .each(function(d) {
         if (id = d.data.id) {
