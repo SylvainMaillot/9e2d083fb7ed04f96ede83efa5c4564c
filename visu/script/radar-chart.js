@@ -1,19 +1,19 @@
-function radarChart(discipline){
+function radarChart(discipline,id_div){
     var RadarChart = {
     defaultConfig: {
       containerClass: 'radar-chart',
-      w: 600,
-      h: 600,
+      w: 300,
+      h: 300,
       factor: 0.8,
-      factorLegend: 1,
-      levels: 3,
+      factorLegend: 1 ,
+      levels: 5,
       maxValue: 100,
       radians: 2 * Math.PI,
       color: d3.scale.category10(),
       axisLine: true,
       axisText: true,
       circles: true,
-      radius: 5,
+      radius: 4,
       axisJoin: function(d, i) {
         return d.className || i;
       },
@@ -307,6 +307,7 @@ function radarChart(discipline){
     var memplois;
 
     data.forEach(function (d){
+      console.log(d)
       if(d.discipline == discipline){
             age = parseFloat(d.age_moyen);
             revenu = parseFloat(d.revenu);
@@ -352,6 +353,6 @@ function radarChart(discipline){
               ]
             }
           ]
-        RadarChart.draw(".chart-container", data)}        
+        RadarChart.draw(id_div, data)}        
     })})
 }

@@ -30,7 +30,7 @@ function bac(discipline,id_div){
                 "location": "bottom-left"
             },
             "size": {
-                "canvasWidth": 590,
+                "canvasWidth": 300,
                 "pieOuterRadius": "90%"
             },
             "data": {

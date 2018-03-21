@@ -1,4 +1,4 @@
-function type(discipline){
+function type(discipline,id_div){
 	d4.csv("data/insertion_lp.csv", function(error,data){
         var CDI;
         var CDD;
@@ -13,7 +13,7 @@ function type(discipline){
                 Autres = d.contrat_autre;
             }
         })
-    var pie = new d4pie("type", {
+    var pie = new d4pie(id_div, {
 	"header": {
 		"title": {
 			"text": "Types de contrat",
@@ -28,7 +28,7 @@ function type(discipline){
 		"location": "bottom-left"
 	},
 	"size": {
-		"canvasWidth": 590,
+		"canvasWidth": 320,
 		"pieInnerRadius": "80%",
 		"pieOuterRadius": "100%"
 	},

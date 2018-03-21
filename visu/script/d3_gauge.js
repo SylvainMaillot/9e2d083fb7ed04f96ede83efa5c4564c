@@ -48,7 +48,7 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
   };
 
   // Create SVG element
-  svg = el.append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom);
+  svg = el.append('svg').attr('width', width + margin.left + margin.right).attr('height', height/2 + margin.top + margin.bottom);
   start = svg.append("text").text("Stabilité").attr("x",margin.left).attr("y",height-70).style({'font-size': '10'});
   start = svg.append("text").text("Précarité").attr("x",margin.left*8).attr("y",height-70).style({'font-size': '10px'});
 
