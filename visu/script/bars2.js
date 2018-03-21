@@ -1,7 +1,7 @@
-function bars2(discipline){
-    var margin = {top: (parseInt(d3.select('body').style('width'), 10)/10), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('width'), 10)/5), left: (parseInt(d3.select('body').style('width'), 10)/20)},
-        width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
-        height = parseInt(d3.select('body').style('height'), 10) - margin.top - margin.bottom;
+function bars2(discipline,id_div){
+    var margin = {top: (parseInt(d3.select(id_div).style('width'), 10)/10), right: (parseInt(d3.select(id_div).style('width'), 10)/20), bottom: (parseInt(d3.select(id_div).style('width'), 10)/5), left: (parseInt(d3.select(id_div).style('width'), 10)/20)},
+        width = parseInt(d3.select(id_div).style('width'), 10) - margin.left - margin.right,
+        height = parseInt(d3.select(id_div).style('height'), 10) - margin.top - margin.bottom;
 
     var x0 = d3.scale.ordinal()
         .rangeRoundBands([0, width], .1);
@@ -24,17 +24,17 @@ function bars2(discipline){
         .orient("left")
         .tickFormat(d3.format(".2s"));
 
-    var divTooltip = d3.select("body").append("div").attr("class", "toolTip");
+    var divTooltip = d3.select(id_div).append("div").attr("class", "toolTip");
 
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select(id_div).append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
-    d3.csv("../data/insertion_lp.csv", function(error,data){
+    d3.csv("visu/data/insertion_lp.csv", function(error,data){
         data.forEach(function (d){
             if(d.discipline == discipline){
                 dataset = [{label : "Type d'emploi", "Cadre" : d.cadre, "Niveau Intermédiaire" : d.inter, "Employé, ouvrier" : d.employe}]
