@@ -1,9 +1,11 @@
-discipline,homme,femme,francais,age_moyen,bts,dut,licence,master,autre,bacS,bacL,bacES,bac_dispense,bac_autre,poursuite_1,poursuite_2,poursuite_3,en_emploi,inactif,recherche_emploi,fonctionnaire,CDI,CDD,contrat_autre,cadre,inter,employe,emploi_region,revenu,partiel_subit,plusieurs_emplois_2,precaire,stable,changement,note
-Activités culturelles et artistiques,4,5,10,30.1,4,1,3,1,4,5,4,1,0,0,1,1,0,9,0,1,0,3,3,3,3,4,2,7,1379,2,1,4,5,3,10.11
-Activités et techniques de communication,2,14,16,24.19,7,4,2,1,4,0,8,4,1,3,5,6,3,10,2,4,0,7,2,1,2,4,4,1,1400,0,0,1,9,2,11.5
-Agronomie,17,8,25,24.28,20,2,2,0,2,11,1,3,1,9,5,7,3,17,4,4,0,11,2,4,5,8,4,8,1500,0,0,4,13,4,14.9
-Intervention sociale,5,24,29,25.62,13,6,4,1,11,2,6,11,0,10,4,6,2,26,0,3,2,10,8,5,5,10,10,8,1400,1,1,8,17,4,14
-Techniques et Activités de l'image et du son ,8,4,11,30.75,5,1,2,2,4,4,2,2,3,1,3,1,1,9,1,2,0,1,2,6,3,4,2,5,1300,1,3,6,3,3,14.11
-Ressources documentaires et bases de données,1,15,15,34.06,0,4,3,4,9,0,11,3,0,2,2,3,2,14,2,0,8,0,2,4,4,4,6,9,1650,3,1,5,8,1,15
-Protection de l'environnement,3,7,10,24.1,9,0,1,0,0,6,1,1,0,2,0,3,2,7,1,2,0,1,1,3,0,3,4,3,1300,0,0,5,1,1,14
-Métier de l'édition,10,2,12,22.67,2,1,1,0,6,4,4,2,0,2,9,10,2,4,2,6,0,0,4,0,0,3,1,0,1330,0,0,2,2,2,16
+discipline,homme,femme,francais,age_moyen,bts,dut,licence,master,autre,bacS,bacL,bacES,bac_dispense,bac_autre,poursuite_1,poursuite_2,poursuite_3,en_emploi,inactif,recherche_emploi,fonctionnaire,CDI,CDD,contrat_autre,cadre,inter,employe,emploi_region,revenu,partiel_subi,plusieurs_emplois_2,precaire,stable,changement,note,total
+Activités culturelles et artistiques,4,5,10,30.1,4,1,3,1,4,5,4,1,0,0,1,1,0,9,0,1,0,3,3,3,3,4,2,7,1379,2,1,4,5,3,10.11,9
+Activités et techniques de communication,2,14,16,24.19,7,4,2,1,4,0,8,4,1,3,5,6,3,10,2,4,0,7,2,1,2,4,4,1,1400,0,0,1,9,2,11.5,16
+Agronomie,17,8,25,24.28,20,2,2,0,2,11,1,3,1,9,5,7,3,17,4,4,0,11,2,4,5,8,4,8,1500,0,0,4,13,4,14.9,25
+Intervention sociale,5,24,29,25.62,13,6,4,1,11,2,6,11,0,10,4,6,2,26,0,3,2,10,8,5,5,10,10,8,1400,1,1,8,17,4,14,29
+Techniques et Activités de l'image et du son ,8,4,11,30.75,5,1,2,2,4,4,2,2,3,1,3,1,1,9,1,2,0,1,2,6,3,4,2,5,1300,1,3,6,3,3,14.11,12
+Ressources documentaires et bases de données,1,15,15,34.06,0,4,3,4,9,0,11,3,0,2,2,3,2,14,2,0,8,0,2,4,4,4,6,9,1650,3,1,5,8,1,15,16
+Protection de l'environnement,3,7,10,24.1,9,0,1,0,0,6,1,1,0,2,0,3,2,7,1,2,0,1,1,3,0,3,4,3,1300,0,0,5,1,1,14,10
+Métier de l'édition,10,2,12,22.67,2,1,1,0,6,4,4,2,0,2,9,10,2,4,2,6,0,0,4,0,0,3,1,0,1330,0,0,2,2,2,16,12
+Moyenne,6.25,9.875,16,26.97125,7.5,2.375,2.25,1.125,5,4,4.625,3.375,0.625,3.625,3.625,4.625,1.875,12,1.5,2.75,1.25,4.125,3,3.25,2.75,5,4.125,5.125,1407.375,0.875,0.75,4.375,7.25,2.5,13.7025,16.125
+Max,17,24,29,34.06,20,6,4,4,11,11,11,11,3,10,9,10,3,26,4,6,8,11,8,6,5,10,10,9,1650,3,3,8,17,4,16,29

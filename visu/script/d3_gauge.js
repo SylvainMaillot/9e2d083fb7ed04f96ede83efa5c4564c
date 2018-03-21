@@ -1,4 +1,4 @@
-function gauge(){
+function gauge(discipline){
   
 var needle;
 
@@ -147,7 +147,18 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
 
   needle = new Needle(chart);
   needle.render();
+  
+  d3.csv("data/insertion_lp.csv", function(error,data){
+    var precaire;
+    var stable;
 
-  needle.moveTo(percent);
+    data.forEach(function (d){
+        if(d.discipline == discipline){
+            precaire = parseFloat(d.precaire);
+            stable = parseFloat(d.stable);
+        }
+    })
+    needle.moveTo((stable/(stable+precaire)));
+})
 
 })(); }
