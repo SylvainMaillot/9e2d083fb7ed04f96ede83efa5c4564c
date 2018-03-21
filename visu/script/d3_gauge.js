@@ -1,4 +1,4 @@
-function gauge(discipline){
+function gauge(discipline,id_div){
   
 var needle;
 
@@ -17,7 +17,7 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
   // Orientation of gauge:
   totalPercent = .75;
 
-  el = d3.select('.chart-gauge');
+  el = d3.select(id_div);
 
   margin = {
     top: 20,
@@ -26,7 +26,7 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
     left: 20
   };
 
-  width = el[0][0].offsetWidth - margin.left - margin.right;
+  width = 200;
   height = width;
   radius = Math.min(width, height) / 2;
   barWidth = 40 * width / 300;
@@ -49,8 +49,8 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
 
   // Create SVG element
   svg = el.append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom);
-  start = svg.append("text").text("Stabilité").attr("x",margin.left).attr("y",height-100).style({'font-size': '30px'});
-  start = svg.append("text").text("Précarité").attr("x",margin.left*13).attr("y",height-100).style({'font-size': '30px'});
+  start = svg.append("text").text("Stabilité").attr("x",margin.left).attr("y",height-70).style({'font-size': '10'});
+  start = svg.append("text").text("Précarité").attr("x",margin.left*8).attr("y",height-70).style({'font-size': '10px'});
 
   // Add layer for the panel
   chart = svg.append('g').attr('transform', "translate(" + ((width + margin.left) / 2) + ", " + ((height + margin.top) / 2) + ")");
@@ -147,7 +147,7 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
 
   needle = new Needle(chart);
   needle.render();
-  
+
   d3.csv("data/insertion_lp.csv", function(error,data){
     var precaire;
     var stable;
@@ -160,5 +160,4 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
     })
     needle.moveTo((stable/(stable+precaire)));
 })
-
 })(); }

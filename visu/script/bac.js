@@ -1,4 +1,4 @@
-function bac(discipline){
+function bac(discipline,id_div){
     d4.csv("data/insertion_lp.csv", function(error,data){
         var bacS;
         var bacL;
@@ -15,8 +15,7 @@ function bac(discipline){
                 bacAutre = d.bac_autre;
             }
         })
-        
-        var pie = new d4pie("bac", {
+        var pie = new d4pie(id_div, {
             "header": {
                 "title": {
                     "text": "Bac d'origine",
