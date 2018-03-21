@@ -1,9 +1,9 @@
 /*!
- * d3pie
+ * d4pie
  * @author Ben Keen
  * @version 0.1.9
  * @date June 17th, 2015
- * @repo http://github.com/benkeen/d3pie
+ * @repo http://github.com/benkeen/d4pie
  */
 
 // UMD pattern from https://github.com/umdjs/umd/blob/master/returnExports.js
@@ -17,24 +17,24 @@
     module.exports = factory();
   } else {
     // browser globals (root is window)
-    root.d3pie = factory(root);
+    root.d4pie = factory(root);
   }
 }(this, function() {
 
-	var _scriptName = "d3pie";
+	var _scriptName = "d4pie";
 	var _version = "0.2.1";
 
 	// used to uniquely generate IDs and classes, ensuring no conflict between multiple pies on the same page
 	var _uniqueIDCounter = 0;
 
 
-	// this section includes all helper libs on the d3pie object. They're populated via grunt-template. Note: to keep
+	// this section includes all helper libs on the d4pie object. They're populated via grunt-template. Note: to keep
 	// the syntax highlighting from getting all messed up, I commented out each line. That REQUIRES each of the files
 	// to have an empty first line. Crumby, yes, but acceptable.
 	//// --------- _default-settings.js -----------/**
 /**
  * Contains the out-the-box settings for the script. Any of these settings that aren't explicitly overridden for the
- * d3pie instance will inherit from these. This is also included on the main website for use in the generation script.
+ * d4pie instance will inherit from these. This is also included on the main website for use in the generation script.
  */
 var defaultSettings = {
 	header: {
@@ -155,8 +155,8 @@ var defaultSettings = {
 				"#2484c1", "#65a620", "#7b6888", "#a05d56", "#961a1a", "#d8d23a", "#e98125", "#d0743c", "#635222", "#6ada6a",
 				"#0c6197", "#7d9058", "#207f33", "#44b9b0", "#bca44a", "#e4a14b", "#a3acb2", "#8cc3e9", "#69a6f9", "#5b388f",
 				"#546e91", "#8bde95", "#d2ab58", "#273c71", "#98bf6e", "#4daa4b", "#98abc5", "#cc1010", "#31383b", "#006391",
-				"#c2643f", "#b0a474", "#a5a39c", "#a9c2bc", "#22af8c", "#7fcecf", "#987ac6", "#3d3b87", "#b77b1c", "#c9c2b6",
-				"#807ece", "#8db27c", "#be66a2", "#9ed3c6", "#00644b", "#005064", "#77979f", "#77e079", "#9c73ab", "#1f79a7"
+				"#c2643f", "#b0a474", "#a5a39c", "#a9c2bc", "#22af8c", "#7fcecf", "#987ac6", "#3d4b87", "#b77b1c", "#c9c2b6",
+				"#807ece", "#8db27c", "#be66a2", "#9ed4c6", "#00644b", "#005064", "#77979f", "#77e079", "#9c73ab", "#1f79a7"
 			],
 			segmentStroke: "#ffffff"
 		},
@@ -194,31 +194,31 @@ var validate = {
 		var element = pie.element;
 		var options = pie.options;
 
-		// confirm d3 is available [check minimum version]
-		if (!window.d3 || !window.d3.hasOwnProperty("version")) {
-			console.error("d3pie error: d3 is not available");
+		// confirm d4 is available [check minimum version]
+		if (!window.d4 || !window.d4.hasOwnProperty("version")) {
+			console.error("d4pie error: d4 is not available");
 			return false;
 		}
 
 		// confirm element is either a DOM element or a valid string for a DOM element
 		if (!(element instanceof HTMLElement || element instanceof SVGElement)) {
-			console.error("d3pie error: the first d3pie() param must be a valid DOM element (not jQuery) or a ID string.");
+			console.error("d4pie error: the first d4pie() param must be a valid DOM element (not jQuery) or a ID string.");
 			return false;
 		}
 
 		// confirm the CSS prefix is valid. It has to start with a-Z and contain nothing but a-Z0-9_-
 		if (!(/[a-zA-Z][a-zA-Z0-9_-]*$/.test(cssPrefix))) {
-			console.error("d3pie error: invalid options.misc.cssPrefix");
+			console.error("d4pie error: invalid options.misc.cssPrefix");
 			return false;
 		}
 
 		// confirm some data has been supplied
 		if (!helpers.isArray(options.data.content)) {
-			console.error("d3pie error: invalid config structure: missing data.content property.");
+			console.error("d4pie error: invalid config structure: missing data.content property.");
 			return false;
 		}
 		if (options.data.content.length === 0) {
-			console.error("d3pie error: no data supplied.");
+			console.error("d4pie error: no data supplied.");
 			return false;
 		}
 
@@ -254,7 +254,7 @@ var helpers = {
 		var canvasHeight = pie.options.size.canvasHeight;
 		var backgroundColor = pie.options.misc.colors.background;
 
-		var svg = d3.select(element).append("svg:svg")
+		var svg = d4.select(element).append("svg:svg")
 			.attr("width", canvasWidth)
 			.attr("height", canvasHeight);
 
@@ -761,14 +761,14 @@ var math = {
 		};
 	},
 
-	// from: http://stackoverflow.com/questions/19792552/d3-put-arc-labels-in-a-pie-chart-if-there-is-enough-space
-	pointIsInArc: function(pt, ptData, d3Arc) {
+	// from: http://stackoverflow.com/questions/19792552/d4-put-arc-labels-in-a-pie-chart-if-there-is-enough-space
+	pointIsInArc: function(pt, ptData, d4Arc) {
 		// Center of the arc is assumed to be 0,0
 		// (pt.x, pt.y) are assumed to be relative to the center
-		var r1 = d3Arc.innerRadius()(ptData), // Note: Using the innerRadius
-			r2 = d3Arc.outerRadius()(ptData),
-			theta1 = d3Arc.startAngle()(ptData),
-			theta2 = d3Arc.endAngle()(ptData);
+		var r1 = d4Arc.innerRadius()(ptData), // Note: Using the innerRadius
+			r2 = d4Arc.outerRadius()(ptData),
+			theta1 = d4Arc.startAngle()(ptData),
+			theta2 = d4Arc.endAngle()(ptData);
 
 		var dist = pt.x * pt.x + pt.y * pt.y,
 			angle = Math.atan2(pt.x, -pt.y); // Note: different coordinate system
@@ -883,11 +883,11 @@ var labels = {
 		labels["dimensions-" + section] = [];
 
 		// get the latest widths, heights
-		var labelGroups = d3.selectAll("." + pie.cssPrefix + "labelGroup-" + section);
+		var labelGroups = d4.selectAll("." + pie.cssPrefix + "labelGroup-" + section);
 		labelGroups.each(function(d, i) {
-			var mainLabel  = d3.select(this).selectAll("." + pie.cssPrefix + "segmentMainLabel-" + section);
-			var percentage = d3.select(this).selectAll("." + pie.cssPrefix + "segmentPercentage-" + section);
-			var value      = d3.select(this).selectAll("." + pie.cssPrefix + "segmentValue-" + section);
+			var mainLabel  = d4.select(this).selectAll("." + pie.cssPrefix + "segmentMainLabel-" + section);
+			var percentage = d4.select(this).selectAll("." + pie.cssPrefix + "segmentPercentage-" + section);
+			var value      = d4.select(this).selectAll("." + pie.cssPrefix + "segmentValue-" + section);
 
 			labels["dimensions-" + section].push({
 				mainLabel:  (mainLabel.node() !== null) ? mainLabel.node().getBBox() : null,
@@ -900,19 +900,19 @@ var labels = {
 		var dims = labels["dimensions-" + section];
 		switch (sectionDisplayType) {
 			case "label-value1":
-				d3.selectAll("." + pie.cssPrefix + "segmentValue-" + section)
+				d4.selectAll("." + pie.cssPrefix + "segmentValue-" + section)
 					.attr("dx", function(d, i) { return dims[i].mainLabel.width + singleLinePad; });
 				break;
 			case "label-value2":
-				d3.selectAll("." + pie.cssPrefix + "segmentValue-" + section)
+				d4.selectAll("." + pie.cssPrefix + "segmentValue-" + section)
 					.attr("dy", function(d, i) { return dims[i].mainLabel.height; });
 				break;
 			case "label-percentage1":
-				d3.selectAll("." + pie.cssPrefix + "segmentPercentage-" + section)
+				d4.selectAll("." + pie.cssPrefix + "segmentPercentage-" + section)
 					.attr("dx", function(d, i) { return dims[i].mainLabel.width + singleLinePad; });
 				break;
 			case "label-percentage2":
-				d3.selectAll("." + pie.cssPrefix + "segmentPercentage-" + section)
+				d4.selectAll("." + pie.cssPrefix + "segmentPercentage-" + section)
 					.attr("dx", function(d, i) { return (dims[i].mainLabel.width / 2) - (dims[i].percentage.width / 2); })
 					.attr("dy", function(d, i) { return dims[i].mainLabel.height; });
 				break;
@@ -921,7 +921,7 @@ var labels = {
 
 	computeLabelLinePositions: function(pie) {
 		pie.lineCoordGroups = [];
-		d3.selectAll("." + pie.cssPrefix + "labelGroup-outer")
+		d4.selectAll("." + pie.cssPrefix + "labelGroup-outer")
 			.each(function(d, i) { return labels.computeLinePosition(pie, i); });
 	},
 
@@ -999,8 +999,8 @@ var labels = {
 			.append("g")
 			.attr("class", pie.cssPrefix + "lineGroup");
 
-        var lineFunction = d3.line()
-			.curve(d3.curveBasis)
+        var lineFunction = d4.line()
+			.curve(d4.curveBasis)
 			.x(function(d) { return d.x; })
 			.y(function(d) { return d.y; });
 
@@ -1023,7 +1023,7 @@ var labels = {
       return;
     }
 
-		d3.selectAll("." + pie.cssPrefix + "labelGroup-" + section)
+		d4.selectAll("." + pie.cssPrefix + "labelGroup-" + section)
 			.style("opacity", 0)
 			.attr("transform", function(d, i) {
 				var x, y;
@@ -1064,7 +1064,7 @@ var labels = {
 		setTimeout(function() {
 			var labelFadeInTime = (pie.options.effects.load.effect === "default") ? 400 : 1; // 400 is hardcoded for the present
 
-			d3.selectAll("." + pie.cssPrefix + "labelGroup-outer")
+			d4.selectAll("." + pie.cssPrefix + "labelGroup-outer")
 				.transition()
 				.duration(labelFadeInTime)
 				.style("opacity", function(d, i) {
@@ -1072,7 +1072,7 @@ var labels = {
 					return (percentage !== null && d.percentage < percentage) ? 0 : 1;
 				});
 
-			d3.selectAll("." + pie.cssPrefix + "labelGroup-inner")
+			d4.selectAll("." + pie.cssPrefix + "labelGroup-inner")
 				.transition()
 				.duration(labelFadeInTime)
 				.style("opacity", function(d, i) {
@@ -1080,7 +1080,7 @@ var labels = {
 					return (percentage !== null && d.percentage < percentage) ? 0 : 1;
 				});
 
-			d3.selectAll("g." + pie.cssPrefix + "lineGroups")
+			d4.selectAll("g." + pie.cssPrefix + "lineGroups")
 				.transition()
 				.duration(labelFadeInTime)
 				.style("opacity", 1);
@@ -1251,7 +1251,7 @@ var labels = {
 	 * @param i 0-N where N is the dataset size - 1.
 	 */
 	getIdealOuterLabelPositions: function(pie, i) {
-    var labelGroupNode = d3.select("#" + pie.cssPrefix + "labelGroup" + i + "-outer").node();
+    var labelGroupNode = d4.select("#" + pie.cssPrefix + "labelGroup" + i + "-outer").node();
     if (!labelGroupNode) {
       return;
     }
@@ -1285,15 +1285,15 @@ var labels = {
 var segments = {
 
     effectMap: {
-        "none": d3.easeLinear,
-        "bounce": d3.easeBounce,
-        "linear": d3.easeLinear,
-        "sin": d3.easeSin,
-        "elastic": d3.easeElastic,
-        "back": d3.easeBack,
-        "quad": d3.easeQuad,
-        "circle": d3.easeCircle,
-        "exp": d3.easeExp
+        "none": d4.easeLinear,
+        "bounce": d4.easeBounce,
+        "linear": d4.easeLinear,
+        "sin": d4.easeSin,
+        "elastic": d4.easeElastic,
+        "back": d4.easeBack,
+        "quad": d4.easeQuad,
+        "circle": d4.easeCircle,
+        "exp": d4.easeExp
     },
 
 	/**
@@ -1311,7 +1311,7 @@ var segments = {
 			.attr("transform", function() { return math.getPieTranslateCenter(pieCenter); })
 			.attr("class", pie.cssPrefix + "pieChart");
 
-		var arc = d3.arc()
+		var arc = d4.arc()
 			.innerRadius(pie.innerRadius)
 			.outerRadius(pie.outerRadius)
 			.startAngle(0)
@@ -1343,11 +1343,11 @@ var segments = {
 			.style("stroke", segmentStroke)
 			.style("stroke-width", 1)
 			.transition()
-			.ease(d3.easeCubicInOut)
+			.ease(d4.easeCubicInOut)
 			.duration(loadSpeed)
 			.attr("data-index", function(d, i) { return i; })
 			.attrTween("d", function(b) {
-				var i = d3.interpolate({ value: 0 }, b);
+				var i = d4.interpolate({ value: 0 }, b);
 				return function(t) {
 					return pie.arc(i(t));
 				};
@@ -1382,10 +1382,10 @@ var segments = {
 	},
 
 	addSegmentEventHandlers: function(pie) {
-		var arc = d3.selectAll("." + pie.cssPrefix + "arc,." + pie.cssPrefix + "labelGroup-inner,." + pie.cssPrefix + "labelGroup-outer");
+		var arc = d4.selectAll("." + pie.cssPrefix + "arc,." + pie.cssPrefix + "labelGroup-inner,." + pie.cssPrefix + "labelGroup-outer");
 
 		arc.on("click", function() {
-			var currentEl = d3.select(this);
+			var currentEl = d4.select(this);
 			var segment;
 
 			// mouseover works on both the segments AND the segment labels, hence the following
@@ -1393,7 +1393,7 @@ var segments = {
 				segment = currentEl.select("path");
 			} else {
 				var index = currentEl.attr("data-index");
-				segment = d3.select("#" + pie.cssPrefix + "segment" + index);
+				segment = d4.select("#" + pie.cssPrefix + "segment" + index);
 			}
 
 			var isExpanded = segment.attr("class") === pie.cssPrefix + "expanded";
@@ -1408,14 +1408,14 @@ var segments = {
 		});
 
 		arc.on("mouseover", function() {
-			var currentEl = d3.select(this);
+			var currentEl = d4.select(this);
 			var segment, index;
 
 			if (currentEl.attr("class") === pie.cssPrefix + "arc") {
 				segment = currentEl.select("path");
 			} else {
 				index = currentEl.attr("data-index");
-				segment = d3.select("#" + pie.cssPrefix + "segment" + index);
+				segment = d4.select("#" + pie.cssPrefix + "segment" + index);
 			}
 
 			if (pie.options.effects.highlightSegmentOnMouseover) {
@@ -1438,14 +1438,14 @@ var segments = {
 		});
 
 		arc.on("mouseout", function() {
-			var currentEl = d3.select(this);
+			var currentEl = d4.select(this);
 			var segment, index;
 
 			if (currentEl.attr("class") === pie.cssPrefix + "arc") {
 				segment = currentEl.select("path");
 			} else {
 				index = currentEl.attr("data-index");
-				segment = d3.select("#" + pie.cssPrefix + "segment" + index);
+				segment = d4.select("#" + pie.cssPrefix + "segment" + index);
 			}
 
 			if (pie.options.effects.highlightSegmentOnMouseover) {
@@ -1489,7 +1489,7 @@ var segments = {
 
 		segments.maybeCloseOpenSegment();
 
-		d3.select(segment).transition()
+		d4.select(segment).transition()
 			.ease(segments.effectMap[pie.options.effects.pullOutSegmentOnClick.effect])
 			.duration(pie.options.effects.pullOutSegmentOnClick.speed)
 			.attr("transform", function(d, i) {
@@ -1504,22 +1504,22 @@ var segments = {
 			.on("end", function(d, i) {
 				pie.currentlyOpenSegment = segment;
 				pie.isOpeningSegment = false;
-				d3.select(segment).attr("class", pie.cssPrefix + "expanded");
+				d4.select(segment).attr("class", pie.cssPrefix + "expanded");
 			});
 	},
 
     maybeCloseOpenSegment: function() {
-        if (d3.selectAll("." + pie.cssPrefix + "expanded").size() > 0) {
-            segments.closeSegment(pie, d3.select("." + pie.cssPrefix + "expanded").node());
+        if (d4.selectAll("." + pie.cssPrefix + "expanded").size() > 0) {
+            segments.closeSegment(pie, d4.select("." + pie.cssPrefix + "expanded").node());
         }
 	},
 
 	closeSegment: function(pie, segment) {
-		d3.select(segment).transition()
+		d4.select(segment).transition()
 			.duration(400)
 			.attr("transform", "translate(0,0)")
 			.on("end", function(d, i) {
-				d3.select(segment).attr("class", "");
+				d4.select(segment).attr("class", "");
 				pie.currentlyOpenSegment = null;
 			});
 	},
@@ -1817,7 +1817,7 @@ var tt = {
         }
 
         tt.currentTooltip = index;
-        d3.select("#" + pie.cssPrefix + "tooltip" + index)
+        d4.select("#" + pie.cssPrefix + "tooltip" + index)
             .transition()
             .duration(fadeInSpeed)
             .style("opacity", function() { return 1; });
@@ -1826,9 +1826,9 @@ var tt = {
     },
 
     moveTooltip: function(pie) {
-        d3.selectAll("#" + pie.cssPrefix + "tooltip" + tt.currentTooltip)
+        d4.selectAll("#" + pie.cssPrefix + "tooltip" + tt.currentTooltip)
             .attr("transform", function(d) {
-                var mouseCoords = d3.mouse(this.parentNode);
+                var mouseCoords = d4.mouse(this.parentNode);
                 var x = mouseCoords[0] + pie.options.tooltips.styles.padding + 2;
                 var y = mouseCoords[1] - (2 * pie.options.tooltips.styles.padding) - 2;
                     return "translate(" + x + "," + y + ")";
@@ -1836,12 +1836,12 @@ var tt = {
     },
 
     hideTooltip: function(pie, index) {
-        d3.select("#" + pie.cssPrefix + "tooltip" + index)
+        d4.select("#" + pie.cssPrefix + "tooltip" + index)
             .style("opacity", function() { return 0; });
 
         // move the tooltip offscreen. This ensures that when the user next mouseovers the segment the hidden
         // element won't interfere
-        d3.select("#" + pie.cssPrefix + "tooltip" + tt.currentTooltip)
+        d4.select("#" + pie.cssPrefix + "tooltip" + tt.currentTooltip)
             .attr("transform", function(d, i) {
                 // klutzy, but it accounts for tooltip padding which could push it onscreen
                 var x = pie.options.size.canvasWidth + 1000;
@@ -1875,7 +1875,7 @@ var tt = {
 	// --------------------------------------------------------------------------------------------
 
 	// our constructor
-	var d3pie = function(element, options) {
+	var d4pie = function(element, options) {
 
 		// element can be an ID or DOM element
 		this.element = element;
@@ -1902,15 +1902,15 @@ var tt = {
 			return;
 		}
 
-		// add a data-role to the DOM node to let anyone know that it contains a d3pie instance, and the d3pie version
-		d3.select(this.element).attr(_scriptName, _version);
+		// add a data-role to the DOM node to let anyone know that it contains a d4pie instance, and the d4pie version
+		d4.select(this.element).attr(_scriptName, _version);
 
 		// things that are done once
 		_setupData.call(this);
 		_init.call(this);
 	};
 
-	d3pie.prototype.recreate = function() {
+	d4pie.prototype.recreate = function() {
 		// now run some validation on the user-defined info
 		if (!validate.initialCheck(this)) {
             return;
@@ -1920,14 +1920,14 @@ var tt = {
 		_init.call(this);
 	};
 
-	d3pie.prototype.redraw = function() {
+	d4pie.prototype.redraw = function() {
 		this.element.innerHTML = "";
 		_init.call(this);
 	};
 
-	d3pie.prototype.destroy = function() {
+	d4pie.prototype.destroy = function() {
 		this.element.innerHTML = ""; // clear out the SVG
-		d3.select(this.element).attr(_scriptName, null); // remove the data attr
+		d4.select(this.element).attr(_scriptName, null); // remove the data attr
 	};
 
 	/**
@@ -1939,10 +1939,10 @@ var tt = {
 	 * 	  data: {}
 	 * 	}
 	 */
-	d3pie.prototype.getOpenSegment = function() {
+	d4pie.prototype.getOpenSegment = function() {
 		var segment = this.currentlyOpenSegment;
 		if (segment !== null && typeof segment !== "undefined") {
-			var index = parseInt(d3.select(segment).attr("data-index"), 10);
+			var index = parseInt(d4.select(segment).attr("data-index"), 10);
 			return {
 				element: segment,
 				index: index,
@@ -1953,27 +1953,27 @@ var tt = {
 		}
 	};
 
-	d3pie.prototype.openSegment = function(index) {
+	d4pie.prototype.openSegment = function(index) {
 		index = parseInt(index, 10);
 		if (index < 0 || index > this.options.data.content.length-1) {
 			return;
 		}
-		segments.openSegment(this, d3.select("#" + this.cssPrefix + "segment" + index).node());
+		segments.openSegment(this, d4.select("#" + this.cssPrefix + "segment" + index).node());
 	};
 
-	d3pie.prototype.closeSegment = function() {
+	d4pie.prototype.closeSegment = function() {
         segments.maybeCloseOpenSegment();
 	};
 
 	// this let's the user dynamically update aspects of the pie chart without causing a complete redraw. It
 	// intelligently re-renders only the part of the pie that the user specifies. Some things cause a repaint, others
 	// just redraw the single element
-	d3pie.prototype.updateProp = function(propKey, value) {
+	d4pie.prototype.updateProp = function(propKey, value) {
 		switch (propKey) {
 			case "header.title.text":
 				var oldVal = helpers.processObj(this.options, propKey);
 				helpers.processObj(this.options, propKey, value);
-				d3.select("#" + this.cssPrefix + "title").html(value);
+				d4.select("#" + this.cssPrefix + "title").html(value);
 				if ((oldVal === "" && value !== "") || (oldVal !== "" && value === "")) {
 					this.redraw();
 				}
@@ -1982,7 +1982,7 @@ var tt = {
 			case "header.subtitle.text":
 				var oldValue = helpers.processObj(this.options, propKey);
 				helpers.processObj(this.options, propKey, value);
-				d3.select("#" + this.cssPrefix + "subtitle").html(value);
+				d4.select("#" + this.cssPrefix + "subtitle").html(value);
 				if ((oldValue === "" && value !== "") || (oldValue !== "" && value === "")) {
 					this.redraw();
 				}
@@ -2045,7 +2045,7 @@ var tt = {
 		// prep-work
 		this.svg = helpers.addSVGSpace(this);
 
-		// store info about the main text components as part of the d3pie object instance
+		// store info about the main text components as part of the d4pie object instance
 		this.textComponents = {
 			headerHeight: 0,
 			title: {
@@ -2080,9 +2080,9 @@ var tt = {
 		var self = this;
 		helpers.whenIdExists(this.cssPrefix + "footer", function() {
 			text.positionFooter(self);
-			var d3 = helpers.getDimensions(self.cssPrefix + "footer");
-			self.textComponents.footer.h = d3.h;
-			self.textComponents.footer.w = d3.w;
+			var d4 = helpers.getDimensions(self.cssPrefix + "footer");
+			self.textComponents.footer.h = d4.h;
+			self.textComponents.footer.w = d4.w;
 		});
 
 		// now create the pie chart and position everything accordingly
@@ -2173,5 +2173,5 @@ var tt = {
 		}
 	};
 
-    return d3pie;
+    return d4pie;
 }));

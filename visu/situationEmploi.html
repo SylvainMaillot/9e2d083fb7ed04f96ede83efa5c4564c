@@ -2,9 +2,13 @@
 <html>
 	<head>
         <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" /> 
-        <script src="script/d3.v3.js" charset="utf-8"></script>
+		<script src="script/d3.v4.js" charset="utf-8"></script>
+		<script src="script/d3.v3.js" charset="utf-8"></script>
 		<script src="script/situationEmploi.js" charset="utf-8"></script>
 		<script type="text/javascript" src="script/d3_gauge.js"></script>
+		<script type="text/javascript" src="script/poursuite_etude.js"></script>
+		<script type="text/javascript" src="script/d3pie.js"></script>
+    	<script type="text/javascript" src="script/bac.js"></script>
 		<style type="text/css">
   			.chart-gauge
 			{
@@ -32,8 +36,10 @@
 		</style>
 
 	</head>
-	<body onload="gauge(), situationEmploi('Activités culturelles et artistiques')">
-        <div class="chart-gauge"></div>
+	<body onload="gauge(), situationEmploi('Activités culturelles et artistiques') ; stack('Activités et techniques de communication') ; bac('Activités culturelles et artistiques')">
+		<div class="chart-gauge"></div>
+		<div id="stack"></div>
+		<div id="bac"></div>
 	</body>
 
 </html>
