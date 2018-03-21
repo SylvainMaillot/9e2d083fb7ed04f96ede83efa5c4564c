@@ -1,4 +1,4 @@
-function stack(discipline){
+function stack(discipline,id_div){
     d3.csv("data/insertion_lp.csv", function(error,data){
         var total;
         var an1;
@@ -14,14 +14,15 @@ function stack(discipline){
             }
         })
 
-        color1="red";
-        color2="blue";
+        color1="#ac3636";
+        color2="steelblue";
         var margin = {top: 20, right: 160, bottom: 35, left: 30};
 
         var width = 300 - margin.left - margin.right,
             height = 200 - margin.top - margin.bottom;
 
-        var svg = d3.select("body")
+
+        var svg = d3.select(id_div)
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
