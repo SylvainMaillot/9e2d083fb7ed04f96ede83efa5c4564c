@@ -8,8 +8,8 @@ function dashboard(id, fData){
     // function to handle histogram.
     function histoGram(fD){
         var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
-        hGDim.w = 500 - hGDim.l - hGDim.r, 
-        hGDim.h = 300 - hGDim.t - hGDim.b;
+        hGDim.w = 250 - hGDim.l - hGDim.r, 
+        hGDim.h = 250 - hGDim.t - hGDim.b;
             
         //create svg for histogram.
         var hGsvg = d3.select(id).append("svg")
@@ -90,7 +90,7 @@ function dashboard(id, fData){
     
     // function to handle pieChart.
     function pieChart(pD){
-        var pC ={},    pieDim ={w:250, h: 250};
+        var pC ={},    pieDim ={w:200, h: 200};
         pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
                 
         // create svg for pie chart.
@@ -195,13 +195,13 @@ function dashboard(id, fData){
         leg= legend(tF);  // create the legend.
 }
 
-function dash(discipline){
-    d3.csv("data/insertion_lp.csv", function(error,data){
+function dash(discipline,id_div){
+    d3.csv("visu/data/insertion_lp.csv", function(error,data){
         data.forEach(function (d){
             if(d.discipline == discipline){
                 var dataset = [];
                 dataset.push({State : 'En Emploi', freq:{Cadre : parseInt(d.cadre), Intermédiaire : parseInt(d.inter), Employé : parseInt(d.employe), Recherche : 0, Inactif : 0}});
                 dataset.push({State : 'En recherche', freq:{Cadre : 0, Intermédiaire : 0, Employé : 0, Recherche : parseInt(d.recherche_emploi), Inactif : 0}});
                 dataset.push({State : 'Inactif', freq:{Cadre : 0, Intermédiaire : 0, Employé : 0, Recherche : 0, Inactif : parseInt(d.inactif)}});
-                dashboard('#dashboard',dataset);
+                dashboard(id_div,dataset);
 }})})}

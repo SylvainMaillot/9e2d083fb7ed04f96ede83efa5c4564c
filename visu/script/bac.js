@@ -39,22 +39,22 @@ function bac(discipline,id_div){
                     {
                         "label": "Bac S",
                         "value": parseFloat(bacS),
-                        "color": "#0c6197"
+                        "color": "#003F57"
                     },
                     {
                         "label": "Bac L",
                         "value": parseFloat(bacL),
-                        "color": "#4daa4b"
+                        "color": "#96D0DE"
                     },
                     {
                         "label": "Bac ES",
                         "value": parseFloat(bacES),
-                        "color": "#e98125"
+                        "color": "#E34824"
                     },
                     {
                         "label": "Autre BAC",
                         "value": parseFloat(bacAutre),
-                        "color": "#830909"
+                        "color": "#BDD02B"
                     },
                     {
                         "label": "Sans BAC",

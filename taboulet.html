@@ -19,7 +19,8 @@
     <link href="visu/css/poursuite_etude.css" rel="stylesheet">
     <link href="visu/css/radar-chart.css" rel="stylesheet">
     <link href="visu/css/a_vider.css"rel="stylesheet">
-    <link href="visu/css/bars2.css"rel="stylesheet">
+    <link href="visu/css/dash.css"rel="stylesheet">
+
 
     <!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -55,8 +56,10 @@
     <!-- type -->
     <script type="text/javascript" src="visu/script/type.js"></script>
 
-    <!-- type -->
-    <script type="text/javascript" src="visu/script/bars2.js"></script>
+    <!-- dash -->
+    <script type="text/javascript" src="visu/script/dash.js"></script>
+
+
 
   </head>
 
@@ -109,7 +112,7 @@
           <div class="col-md-6 col-lg-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
                <!-- CHANGEMENT ICI -->
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100" id="Activités culturelles et artistiques" onclick="bac(this.id,'#bac1') ; gauge(this.id,'#gauge1') ; stack(this.id,'#stack1');radarChart(this.id,'#radar1');type(this.id,'#type1');bars2(this.id,'#bars21')">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100" id="Activités culturelles et artistiques" onclick="bac(this.id,'#bac1') ; gauge(this.id,'#gauge1') ; stack(this.id,'#stack1');radarChart(this.id,'#radar1');type(this.id,'#type1');dash(this.id,'#dash1')">
                 <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
@@ -120,7 +123,7 @@
           <div class="col-md-6 col-lg-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
               <!-- CHANGEMENT ICI -->
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100" id="Activités et techniques de communication" onclick="bac(this.id,'#bac2') ; gauge(this.id,'#gauge2') ; stack(this.id,'#stack2');radarChart(this.id,'#radar2');type(this.id,'#type2')">
+              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100" id="Activités et techniques de communication" onclick="bac(this.id,'#bac2') ; gauge(this.id,'#gauge2') ; stack(this.id,'#stack2');radarChart(this.id,'#radar2');type(this.id,'#type2');dash(this.id,'#dash2')">
                 <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
@@ -339,7 +342,7 @@
           <div class="a_vider" id="stack1"></div>
           <div class="a_vider" id="radar1"></div>
           <div class="a_vider" id="type1"></div>
-          <div class="a_vider" id="bars21"></div>
+          <div class="a_vider" id="dash1"></div>
         </div>
       </div>
 
@@ -366,6 +369,7 @@
         <div class="a_vider" id="stack2"></div>
         <div class="a_vider" id="radar2"></div>
         <div class="a_vider" id="type2"></div>
+        <div class="a_vider" id="dash2"></div>
       </div>
     </div>
 

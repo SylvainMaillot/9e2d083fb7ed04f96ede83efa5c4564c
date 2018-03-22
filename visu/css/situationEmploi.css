@@ -20,4 +20,6 @@
 
 svg {
     font: 10px sans-serif;
+    border: dotted 1px red;
+    
 }
