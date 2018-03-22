@@ -2,96 +2,324 @@
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Activités culturelles et artistiques",
-        "value": "4"
+        "subregion": "Archéologie",
+        "value": "13"
     },
     {
         "key": "Femmes",
         "region": "Master",
-        "subregion": "Activités culturelles et artistiques",
-        "value": "5"
+        "subregion": "Archéologie",
+        "value": "21"
     },
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Activités et techniques de communication",
-        "value": "2"
+        "subregion": "Arts du spectacle",
+        "value": "21"
     },
     {
         "key": "Femmes",
         "region": "Master",
-        "subregion": "Activités et techniques de communication",
-        "value": "14"
+        "subregion": "Arts du spectacle",
+        "value": "29"
     },
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Agronomie",
-        "value": "17"
-    },
-    {
-        "key": "Femmes",
-        "region": "Master",
-        "subregion": "Agronomie",
-        "value": "8"
-    },
-    {
-        "key": "Hommes",
-        "region": "Master",
-        "subregion": "Intervention sociale",
+        "subregion": "Arts plastiques",
         "value": "5"
     },
     {
         "key": "Femmes",
         "region": "Master",
-        "subregion": "Intervention sociale",
-        "value": "24"
+        "subregion": "Arts plastiques",
+        "value": "13"
     },
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Techniques et Activités de l'image et du son ",
-        "value": "8"
+        "subregion": "Développement durable aménagement",
+        "value": "27"
     },
     {
         "key": "Femmes",
         "region": "Master",
-        "subregion": "Techniques et Activités de l'image et du son ",
-        "value": "4"
+        "subregion": "Développement durable aménagement",
+        "value": "44"
     },
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Ressources documentaires et bases de données",
-        "value": "1"
+        "subregion": "Ethnologie et sociologie",
+        "value": "5"
     },
     {
         "key": "Femmes",
         "region": "Master",
-        "subregion": "Ressources documentaires et bases de données",
-        "value": "15"
+        "subregion": "Ethnologie et sociologie",
+        "value": "10"
     },
     {
         "key": "Hommes",
         "region": "Master",
-        "subregion": "Protection de l'environnement",
+        "subregion": "Etudes culturelles",
         "value": "3"
     },
     {
         "key": "Femmes",
         "region": "Master",
+        "subregion": "Etudes culturelles",
+        "value": "4"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Histoire, histoire de l'art et patrimoine",
+        "value": "37"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Histoire, histoire de l'art et patrimoine",
+        "value": "64"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Information et communication",
+        "value": "16"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Information et communication",
+        "value": "44"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Ingenierie, gestion territoriales",
+        "value": "27"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Ingenierie, gestion territoriales",
+        "value": "32"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "LEA : négociation",
+        "value": "17"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "LEA : négociation",
+        "value": "37"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Lettres",
+        "value": "8"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Lettres",
+        "value": "33"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Management des ressources humaines et du développement social",
+        "value": "37"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Management des ressources humaines et du développement social",
+        "value": "91"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Langues Littératures et Civilisations étrangères et régionales",
+        "value": "23"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Langues Littératures et Civilisations étrangères et régionales",
+        "value": "67"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Sciences du language",
+        "value": "11"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Sciences du language",
+        "value": "41"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Sciences de l'éducation",
+        "value": "27"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Sciences de l'éducation",
+        "value": "56"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Psychologie",
+        "value": "19"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Psychologie",
+        "value": "94"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Musique",
+        "value": "4"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Musique",
+        "value": "2"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "Philosophie et psychanalyse",
+        "value": "21"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "Philosophie et psychanalyse",
+        "value": "40"
+    },
+    {
+        "key": "Hommes",
+        "region": "Master",
+        "subregion": "LEA : Traduction",
+        "value": "4"
+    },
+    {
+        "key": "Femmes",
+        "region": "Master",
+        "subregion": "LEA : Traduction",
+        "value": "15"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Activités culturelles et artistiques",
+        "value": "4"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Activités culturelles et artistiques",
+        "value": "5"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Activités et techniques de communication",
+        "value": "2"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Activités et techniques de communication",
+        "value": "14"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Agronomie",
+        "value": "17"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Agronomie",
+        "value": "8"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Intervention sociale",
+        "value": "5"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Intervention sociale",
+        "value": "24"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Techniques et Activités de l'image et du son ",
+        "value": "8"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Techniques et Activités de l'image et du son ",
+        "value": "4"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Ressources documentaires et bases de données",
+        "value": "1"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
+        "subregion": "Ressources documentaires et bases de données",
+        "value": "15"
+    },
+    {
+        "key": "Hommes",
+        "region": "Licence Pro",
+        "subregion": "Protection de l'environnement",
+        "value": "3"
+    },
+    {
+        "key": "Femmes",
+        "region": "Licence Pro",
         "subregion": "Protection de l'environnement",
         "value": "7"
     },
     {
         "key": "Hommes",
-        "region": "Master",
+        "region": "Licence Pro",
         "subregion": "Métier de l'édition",
         "value": "10"
     },
     {
         "key": "Femmes",
-        "region": "Master",
+        "region": "Licence Pro",
         "subregion": "Métier de l'édition",
         "value": "2"
     }
