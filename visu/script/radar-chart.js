@@ -307,7 +307,6 @@ function radarChart(discipline,id_div){
     var memplois;
 
     data.forEach(function (d){
-      console.log(d)
       if(d.discipline == discipline){
             age = parseFloat(d.age_moyen);
             revenu = parseFloat(d.revenu);
