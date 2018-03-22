@@ -109,7 +109,7 @@ function radarChart(id,id_div){
                 .attr('x2', function(d, i) { return getHorizontalPosition(i, cfg.w / 2, cfg.factor); })
                 .attr('y2', function(d, i) { return getVerticalPosition(i, cfg.h / 2, cfg.factor); });
             }
-  
+            
             if(cfg.axisText) {
               axis.select('text')
                 .attr('class', function(d, i){
@@ -355,8 +355,8 @@ function radarChart(id,id_div){
               axes: [
                 {axis: "Âge moyen", value: (age/maxage*100).toFixed(2)},
                 {axis: "Revenu", value: (revenu/maxrevenu*100).toFixed(2)},
-                {axis: "Adéquation entre étude et emploi", value: (note/maxnote*100).toFixed(2)},  
-                {axis: "Emplois dans la région", value: (region/maxregion*100).toFixed(2)},  
+                {axis: "Note moyenne", value: (note/maxnote*100).toFixed(2)},  
+                {axis: "Emplois régional", value: (region/maxregion*100).toFixed(2)},  
                 {axis: "En Emploi", value: (emplois/maxemplois*100).toFixed(2)}
               ]
             },
