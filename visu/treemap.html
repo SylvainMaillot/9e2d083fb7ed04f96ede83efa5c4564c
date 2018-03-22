@@ -58,7 +58,7 @@ rect.parent {
 
 .children rect.parent {
   fill: #bbb;
-  fill-opacity: .5;
+  fill-opacity: 1;
 }
 
 .children:hover rect.child {
@@ -105,7 +105,7 @@ function main(o, data) {
       height = opts.height - margin.top - margin.bottom - theight,
       transitioning;
   
-  var color = d3.scale.category20c();
+  var color = d3.scale.ordinal().domain([0,1]).range(["#ffccff","#97d0de"]);
   
   var x = d3.scale.linear()
       .domain([0, width])
@@ -176,7 +176,7 @@ function main(o, data) {
   function accumulate(d) {
     return (d._children = d.values)
         ? d.value = d.values.reduce(function(p, v) { return p + accumulate(v); }, 0)
-        : d.value;
+        : parseInt(d.value);
   }
 
   // Compute the treemap layout recursively such that each group of siblings
@@ -227,7 +227,7 @@ function main(o, data) {
         .attr("class", "child")
         .call(rect)
       .append("title")
-        .text(function(d) { console.log(d.value); return d.key + " (" + formatNumber(d.value) + ")"; });
+        .text(function(d) { return d.key + " (" + formatNumber(d.value) + ")"; });
     children.append("text")
         .attr("class", "ctext")
         .text(function(d) { return d.key; })
