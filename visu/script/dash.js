@@ -195,10 +195,10 @@ function dashboard(id, fData){
         leg= legend(tF);  // create the legend.
 }
 
-function dash(discipline,id_div){
-    d3.csv("visu/data/insertion_lp.csv", function(error,data){
+function dash(id,id_div){
+    d3.csv("visu/data/insertion.csv", function(error,data){
         data.forEach(function (d){
-            if(d.discipline == discipline){
+            if(d.id == id){
                 var dataset = [];
                 dataset.push({State : 'En Emploi', freq:{Cadre : parseInt(d.cadre), Intermédiaire : parseInt(d.inter), Employé : parseInt(d.employe), Recherche : 0, Inactif : 0}});
                 dataset.push({State : 'En recherche', freq:{Cadre : 0, Intermédiaire : 0, Employé : 0, Recherche : parseInt(d.recherche_emploi), Inactif : 0}});

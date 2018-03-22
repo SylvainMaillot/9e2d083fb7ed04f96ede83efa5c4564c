@@ -1,12 +1,12 @@
-function type(discipline,id_div){
-	d4.csv("visu/data/insertion_lp.csv", function(error,data){
+function type(id,id_div){
+	d4.csv("visu/data/insertion.csv", function(error,data){
         var CDI;
         var CDD;
         var Fonctionnaires;
         var Autres;
 
         data.forEach(function (d){
-            if(d.discipline == discipline){
+            if(d.id == id){
                 CDI = d.CDI;
                 CDD = d.CDD;
                 Fonctionnaires = d.fonctonnaire;

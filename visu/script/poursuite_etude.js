@@ -1,12 +1,12 @@
-function stack(discipline,id_div){
-    d3.csv("visu/data/insertion_lp.csv", function(error,data){
+function stack(id,id_div){
+    d3.csv("visu/data/insertion.csv", function(error,data){
         var total;
         var an1;
         var an2;
         var an3;
 
         data.forEach(function (d){
-            if(d.discipline == discipline){
+            if(d.id == id){
                 total = parseFloat(d.homme)+parseFloat(d.femme);
                 an1 = parseFloat(d.poursuite_1);
                 an2 = parseFloat(d.poursuite_2);

@@ -1,4 +1,4 @@
-function radarChart(discipline,id_div){
+function radarChart(id,id_div){
     var RadarChart = {
     defaultConfig: {
       containerClass: 'radar-chart',
@@ -287,7 +287,7 @@ function radarChart(discipline,id_div){
     }
   };
 
-  d3.csv("visu/data/insertion_lp.csv", function(error,data){
+  d3.csv("visu/data/insertion.csv", function(error,data){
     var age;
     var revenu;
     var note;
@@ -307,7 +307,7 @@ function radarChart(discipline,id_div){
     var memplois;
 
     data.forEach(function (d){
-      if(d.discipline == discipline){
+      if(d.id == id){
             age = parseFloat(d.age_moyen);
             revenu = parseFloat(d.revenu);
             note = parseFloat(d.note);
@@ -315,19 +315,38 @@ function radarChart(discipline,id_div){
             emplois = parseFloat(d.en_emploi);
             total = parseFloat(d.homme) + parseFloat(d.femme)
         }
-      if(d.discipline == "Moyenne"){
+      switch (d.niveau){
+        case 'licence' :
+          if(d.discipline == "MoyenneLicence"){
             mage = parseFloat(d.age_moyen);
             mrevenu = parseFloat(d.revenu);
             mnote = parseFloat(d.note);
             mregion = parseFloat(d.emploi_region);
             memplois = parseFloat(d.en_emploi); 
-      }
-      if(d.discipline == "Max"){
-            maxage = parseFloat(d.age_moyen);
-            maxrevenu = parseFloat(d.revenu);
-            maxnote = parseFloat(d.note);
-            maxregion = parseFloat(d.emploi_region);
-            maxemplois = parseFloat(d.en_emploi); 
+          }
+          if(d.discipline == "MaxLicence"){
+                maxage = parseFloat(d.age_moyen);
+                maxrevenu = parseFloat(d.revenu);
+                maxnote = parseFloat(d.note);
+                maxregion = parseFloat(d.emploi_region);
+                maxemplois = parseFloat(d.en_emploi); 
+          }
+          break;
+        case 'master' :
+          if(d.discipline == "MoyenneMaster"){
+            mage = parseFloat(d.age_moyen);
+            mrevenu = parseFloat(d.revenu);
+            mnote = parseFloat(d.note);
+            mregion = parseFloat(d.emploi_region);
+            memplois = parseFloat(d.en_emploi); 
+          }
+          if(d.discipline == "MaxMaster"){
+                maxage = parseFloat(d.age_moyen);
+                maxrevenu = parseFloat(d.revenu);
+                maxnote = parseFloat(d.note);
+                maxregion = parseFloat(d.emploi_region);
+                maxemplois = parseFloat(d.en_emploi); 
+          }
       }
       if(age){
           var data = [

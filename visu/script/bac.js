@@ -1,5 +1,5 @@
-function bac(discipline,id_div){
-    d4.csv("visu/data/insertion_lp.csv", function(error,data){
+function bac(id,id_div){
+    d4.csv("visu/data/insertion.csv", function(error,data){
         var bacS;
         var bacL;
         var bacES;
@@ -7,7 +7,7 @@ function bac(discipline,id_div){
         var bacAutre;
 
         data.forEach(function (d){
-            if(d.discipline == discipline){
+            if(d.id == id){
                 bacS = d.bacS;
                 bacL = d.bacL;
                 bacES = d.bacES;

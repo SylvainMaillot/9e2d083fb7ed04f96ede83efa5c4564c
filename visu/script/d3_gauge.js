@@ -1,4 +1,4 @@
-function gauge(discipline,id_div){
+function gauge(id,id_div){
   
 var needle;
 
@@ -148,12 +148,12 @@ var barWidth, chart, chartInset, degToRad, repaintGauge,
   needle = new Needle(chart);
   needle.render();
 
-  d3.csv("visu/data/insertion_lp.csv", function(error,data){
+  d3.csv("visu/data/insertion.csv", function(error,data){
     var precaire;
     var stable;
 
     data.forEach(function (d){
-        if(d.discipline == discipline){
+        if(d.id == id){
             precaire = parseFloat(d.precaire);
             stable = parseFloat(d.stable);
         }
