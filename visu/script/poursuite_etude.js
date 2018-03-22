@@ -14,8 +14,8 @@ function stack(discipline,id_div){
             }
         })
 
-        color1="#ac3636";
-        color2="steelblue";
+        color1="#E34824";
+        color2="#96D0DE";
         var margin = {top: 20, right: 160, bottom: 35, left: 30};
 
         var width = 300 - margin.left - margin.right,

@@ -6,11 +6,11 @@
     } 
 .chart-filled
 {
-    fill: steelblue;
+    fill: #96D0DE;
 }
 .chart-empty
 {
-    fill: #ac3636;
+    fill: #E34824;
 }
 
 .needle, .needle-center
