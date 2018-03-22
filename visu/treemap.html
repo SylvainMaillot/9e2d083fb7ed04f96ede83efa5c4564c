@@ -322,7 +322,7 @@ if (window.location.hash === "") {
     d3.json("data/data.json", function(err, res) {
         if (!err) {
             var data = d3.nest().key(function(d) { return d.region; }).key(function(d) { return d.subregion; }).entries(res);
-            main({title: "World Population"}, {key: "World", values: data});
+            main({title: "Répartition Hommes/Femmes"}, {key: "Effectif Total", values: data});
         }
     });
 }
