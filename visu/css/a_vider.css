@@ -7,7 +7,7 @@
     margin-right:auto;
     display:inline-block;
 
-    border: groove 1px blue;
+    border: double blue;
 }
 .titre_graphe{
     text-align: center;

@@ -18,13 +18,13 @@ function stack(id,id_div){
         color2="#96D0DE";
         var margin = {top: 20, right: 160, bottom: 35, left: 30};
 
-        var width = 300 - margin.left - margin.right,
+        var width = 310 - margin.left - margin.right,
             height = 200 - margin.top - margin.bottom;
 
 
         var svg = d3.select(id_div)
         .append("svg")
-        .attr("width", width + margin.left + margin.right -70)
+        .attr("width", width + margin.left + margin.right -60)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
